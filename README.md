@@ -20,3 +20,10 @@ If the mouse point is above the center of the controller, than check for one of 
 
 ![Diagram of Quadrant 1](quadrant_1.png)
 
+Example code.  Note that you need to convert to floating point.  
+center is a two number tuple (400,300), the center of the player.  x, y is the mouse position.
+
+        opposite = float(center[1] - y)
+        if x > center[0]:
+            adjacent = float(x - center[0])
+            rad = math.atan(opposite/adjacent)

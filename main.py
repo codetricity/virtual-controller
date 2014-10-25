@@ -3,6 +3,20 @@ import sys
 import math
 
 def get_angle(pos):
+    """
+    :param pos: mouse position
+    :return: radian angle of mouse position away from center.
+    Divide the virtual controller into three sections.
+    For the y-axis, the mouse point is either:
+    1) above the center of the controller
+    2) below the center of the controller
+    3) at the same height of the center of the controller
+    If the mouse point is above the center of the controller, than check
+    for one of three conditions:
+    1) x is to the right of the controller
+    2) x is to the left of the controller
+    3) x is at the same point as the centerx of the controller
+    """
     center = v_control.center
     x = pos[0]
     y = pos[1]
@@ -34,6 +48,15 @@ def get_angle(pos):
 
 
 def beam(angle):
+    """
+    :param angle: radians calculated from the virtual controller
+    :return: x,y coordinates of the end-point
+    Start with the center of the player.  The end of the beam is 100 pixels
+    away from the center.  To make a bullet instead of beam, create a class
+    for bullet and have the hypoteneuse be an attribute that increases
+    in size.  Remember to delete the bullet from the sprite group or list
+    when it goes off the screen.
+    """
     hypoteneuse = 100.0
     center = (400, 300)
     adjacent = math.cos(angle) * hypoteneuse

@@ -25,7 +25,7 @@ If the mouse point is above the center of the controller, than check for one of 
 2. x is to the left of the controller
 3. x is at the same point as the centerx of the controller
 
-### Mouse point is located above and to the right of controller
+### Mouse point is located above and to the right of controller (Quadrant 1)
 
 ![Diagram of Quadrant 1](doc/quadrant_1.png)
 
@@ -48,7 +48,7 @@ the beam relative to the center of the player.
 
 ---
 
-### Mouse point is below and to the left of the controller center
+## Mouse point is below and to the left of the controller center (Quadrant 3)
 
 If the mouse pointer is not in quadrant 1, add the appropriate radian value.  For example,
 if the mouse pointer is in quadrant 3, then add pi (3.14) to the radian value.

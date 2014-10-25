@@ -1,10 +1,15 @@
 #Virtual Controller Angle Tutorial
 
+This is part of an educational curriculum to teach 9th and 10th 
+grade students how to build mobile games on Android.  The student
+needs to be familiar with trigonometry.  The primary target student
+is in 10th grade.
+
 The [code is on GitHub](https://github.com/codetricity/virtual-controller).
 
 Divide the virtual controller into four quadrants.
 
-For each quadrant, you'll need to be adjust the formula to
+For each quadrant, you'll need to adjust the formula to
 calculate the opposite and adjacent sides of the triangle.  For example, if the mouse
 is above the center of the controller, you'll need to subtract the mouse y position
 from the centery of the controller. The formulas for each quadrant are slightly 
@@ -65,3 +70,13 @@ If the mouse pointer is not in quadrant 1, add the appropriate radian value.  Fo
 if the mouse pointer is in quadrant 3, then add pi (3.14) to the radian value.
 
 ![calculation of quadrant 3](doc/quadrant_3.png)
+
+[Additional examples are available](https://github.com/codetricity/pychildren-demos)
+
+The most likely scenario is to start with [Swarm](https://github.com/codetricity/pychildren-demos/tree/master/Swarm) 
+and build from there.
+
+My son is planning to try something with the [Android accelerometer](http://pychildren.blogspot.com/2014/10/using-android-accelerometer-with-pygame.html).
+
+
+

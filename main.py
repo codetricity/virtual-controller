@@ -77,6 +77,7 @@ SCREEN = pygame.display.set_mode((800, 600))
 RED = (100, 10, 10)
 BLUE = (68, 204, 230)
 v_control = pygame.Rect(650, 450, 100, 100)
+# print(v_control.center)
 player = pygame.Rect(0, 0, 20, 20)
 player.center = (400, 300)
 

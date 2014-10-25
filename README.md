@@ -64,4 +64,4 @@ the beam relative to the center of the player.
 If the mouse pointer is not in quadrant 1, add the appropriate radian value.  For example,
 if the mouse pointer is in quadrant 3, then add pi (3.14) to the radian value.
 
-![calculation of quadrant 3](doc/quadrant_2.png)
+![calculation of quadrant 3](doc/quadrant_3.png)

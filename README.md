@@ -18,7 +18,7 @@ If the mouse point is above the center of the controller, than check for one of 
 
 ### Mouse point is located above and to the right of controller
 
-![Diagram of Quadrant 1](quadrant_1.png)
+![Diagram of Quadrant 1](doc/quadrant_1.png)
 
 Example code.  Note that you need to convert to floating point.  
 center is a two number tuple (400,300), the center of the player.  x, y is the mouse position.

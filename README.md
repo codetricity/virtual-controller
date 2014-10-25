@@ -11,13 +11,20 @@ from the centery of the controller. The formulas for each quadrant are slightly
 different, depending on whether you add or subtract values to get the length of
 the side of the triangle. 
 
+## Define Each Quadrant
+
+![Diagram of characteristics of each quadrant](doc/quadrant_overview.png)
+
+
 For the y-axis, the mouse point is either:
 
 1. above the center of the controller
 2. below the center of the controller
 3. at the same height of the center of the controller
 
-## Mouse Point Located Above Controller Center
+##Quandrants 1 and 2 
+
+**Mouse Point Located Above Controller Center**
 
 If the mouse point is above the center of the controller, than check for one of three conditions:
 
@@ -25,7 +32,9 @@ If the mouse point is above the center of the controller, than check for one of 
 2. x is to the left of the controller
 3. x is at the same point as the centerx of the controller
 
-### Mouse point is located above and to the right of controller (Quadrant 1)
+###Quadrant 1 
+
+**Mouse point is located above and to the right of controller**
 
 ![Diagram of Quadrant 1](doc/quadrant_1.png)
 
@@ -48,7 +57,9 @@ the beam relative to the center of the player.
 
 ---
 
-## Mouse point is below and to the left of the controller center (Quadrant 3)
+##Quadrant 3 
+
+**Mouse point is below and to the left of the controller center** 
 
 If the mouse pointer is not in quadrant 1, add the appropriate radian value.  For example,
 if the mouse pointer is in quadrant 3, then add pi (3.14) to the radian value.

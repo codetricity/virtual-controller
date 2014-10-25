@@ -22,23 +22,26 @@ def get_angle(pos):
     y = pos[1]
     rad = 0.0
     if y < center[1]:
-        opposite = float(center[1] - y)
+
         if x > center[0]:
+            opposite = float(center[1] - y)
             adjacent = float(x - center[0])
             rad = math.atan(opposite/adjacent)
         elif x < center[0]:
-            adjacent = float(center[0] - x)
-            rad = math.pi - (math.atan(opposite/adjacent))
+            opposite = float(center[0] - x)
+            adjacent = float(center[1] - y)
+            rad = .5 * math.pi + (math.atan(opposite/adjacent))
         else:
             rad = 0.5 * math.pi
     elif y > center[1]:
-        opposite = float(y - center[1])
         if x < center[0]:
+            opposite = float(y - center[1])
             adjacent = float(center[0] - x)
             rad = math.pi + (math.atan(opposite/adjacent))
         elif x > center[0]:
-            adjacent = float(x - center[0])
-            rad = (2 * math.pi) - math.atan(opposite/adjacent)
+            adjacent = float(y - center[1])
+            opposite = float(x - center[0])
+            rad = (1.5 * math.pi) + math.atan(opposite/adjacent)
         else:
             rad = 1.5 * math.pi
     else:

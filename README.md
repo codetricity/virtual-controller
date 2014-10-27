@@ -117,12 +117,69 @@ if the mouse pointer is in quadrant 3, then add pi (3.14) to the radian value.
 
 ![calculation of quadrant 3](doc/quadrant_3.png)
 
+
+##Using Radian Angle to Control Beam
+
+Creating a beam is easier than a bullet.  It is a line with the starting
+point at the center of the player and the end point 30 pixels out from 
+the center.
+
+Once you have the angle, use sine and cosine to calculate the length of 
+opposite and adjacent sides of the triangle.
+
+    def beam(angle, center):
+        """
+        :param angle: radians calculated from the virtual controller
+        :return: x,y coordinates of the end-point
+        Start with the center of the player.  The end of the beam is 100 pixels
+        away from the center.  To make a bullet instead of beam, create a class
+        for bullet and have the hypoteneuse be an attribute that increases
+        in size.  Remember to delete the bullet from the sprite group or list
+        when it goes off the screen.
+        """
+        hypoteneuse = 30.0
+        adjacent = math.cos(angle) * hypoteneuse
+        x = adjacent + center[0]
+        opposite = math.sin(angle) * hypoteneuse
+        y = center[1] - opposite
+        beam_end = (x, y)
+        return beam_end
+
+
+
+##Shoot Bullets Instead of a Beam
+In the second example, I'm using almost the same code to move the 
+player around the screen.
+
+If you want to shoot bullets, I'm using sprites.  Don't be intimidated
+by sprites even though the code looks a bit funky.
+
+
+    class Bullet(pygame.sprite.Sprite):
+        def __init__(self, angle, p_pos):
+            YELLOW = (250, 223, 65)
+            RED = (200, 10, 10)
+            pygame.sprite.Sprite.__init__(self)
+            self.image = pygame.Surface((6,6))
+            pygame.draw.circle(self.image, YELLOW, (3, 3), 3)
+            pygame.draw.circle(self.image, RED, (3,3), 1)
+            self.rect = self.image.get_rect()
+            self.hypotenuse = 30.0
+            self.angle = angle
+            self.cent = p_pos
+    
+        def update(self):
+            adjacent = math.cos(self.angle) * self.hypotenuse
+            x = adjacent + self.cent[0]
+            opposite = math.sin(self.angle) * self.hypotenuse
+            y = self.cent[1] - opposite
+            self.rect.center = (x, y)
+            self.hypotenuse += 5
+
+
 [Additional examples are available](https://github.com/codetricity/pychildren-demos)
 
 The most likely scenario is to start with [Swarm](https://github.com/codetricity/pychildren-demos/tree/master/Swarm) 
 and build from there.
 
 My son is planning to try something with the [Android accelerometer](http://pychildren.blogspot.com/2014/10/using-android-accelerometer-with-pygame.html).
-
-
-

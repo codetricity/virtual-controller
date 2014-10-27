@@ -148,11 +148,10 @@ opposite and adjacent sides of the triangle.
 
 
 ##Shoot Bullets Instead of a Beam
-In the second example, I'm using almost the same code to move the 
-player around the screen.
 
 If you want to shoot bullets, I'm using sprites.  Don't be intimidated
-by sprites even though the code looks a bit funky.
+by sprites even though the code looks a bit funky.  The bullet moves
+forward by increasing the length of the hypotenuse by 5 pixels.
 
 
     class Bullet(pygame.sprite.Sprite):
@@ -175,6 +174,11 @@ by sprites even though the code looks a bit funky.
             y = self.cent[1] - opposite
             self.rect.center = (x, y)
             self.hypotenuse += 5
+
+
+##Move The Player
+In the second example, I'm using almost the same code to move the 
+player around the screen.
 
 
 [Additional examples are available](https://github.com/codetricity/pychildren-demos)

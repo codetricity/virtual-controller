@@ -12,6 +12,11 @@ the getting the angle from the virtual controller.  The second lesson
 is in bullet.py and shows how to fire bullets from a moving player. 
 There is sound generated each time a bullet is fired.
 
+Here's a video snippet showing the 360 degree movement and independent firing.
+
+[![Screen shot of virtual controller with bullets](doc/virtual_controller.png)](http://youtu.be/ia7QG6d8xnE)
+
+
 Additional sounds can be downloaded from [SoundBible](http://soundbible.com).
 
 Since the player is moving, I also implemented a rudimentary bounds detection
@@ -49,6 +54,9 @@ trigonometry is a rusty, review it now.
 `math.atan`, `math.sin`, and `math.cos` are in the python math 
 standard library.  You'll
 need to add `import math` at the top of your program.  
+
+![Review of sine, cosine, and tangent](doc/trig.png)
+
 To use arc tangent you'll need to calculate the lengths of the
 opposite and adjacent sides of a right triangle. Since the 
 formulas to calculate the lengths of the sides of a triangle 

@@ -7,6 +7,52 @@ is in 10th grade.
 
 The [code is on GitHub](https://github.com/codetricity/virtual-controller).
 
+There are two examples.  The main lesson is in main.py and focuses on 
+the getting the angle from the virtual controller.  The second lesson
+is in bullet.py and shows how to fire bullets from a moving player. 
+There is sound generated each time a bullet is fired.
+
+Additional sounds can be downloaded from [SoundBible](http://soundbible.com).
+
+Since the player is moving, I also implemented a rudimentary bounds detection
+so that the player doesn't move off the screen.
+
+## Create the Controller
+
+In this lesson, the controller is a circle of radius 50.  The main
+objective is to calculate the angle of the player's right thumb in
+relation to the center of the circle.  Since we're running this
+on a desktop computer before loading it onto an Android phone, 
+the mouse will represent the point the
+thumb touches the screen.
+
+     pygame.draw.circle(SCREEN, RED, v_control.center, 50, 2)
+     pygame.draw.circle(SCREEN, RED, v_control.center, 3)
+  
+There is a rectangle called, v_control that I'm using with
+colliderect.
+
+     v_control = pygame.Rect(650, 450, 100, 100)
+
+Before I calculate the angle, I make sure that the thumb is inside
+of the rectangle for the virtual controller. 
+
+    if v_control.collidepoint(pos):
+        rad = get_angle(pos, v_control.center)
+
+
+You'll need to use arc tangent `math.atan` to calculate the angle
+in radians.  This is in the python math standard library.  You'll
+need to import it.  arc tangent needs to know the lengths of the
+opposite and adjacent sides of a right triangle. Since the 
+formulas to calculate the lengths of the sides of a triangle 
+ are slightly different, I've divided the controller into
+ four quadrants, starting with quadrant one in the upper right and 
+ rotating counter-clockwise.
+
+
+## Organize Controller Into Quadrants
+
 Divide the virtual controller into four quadrants.
 
 For each quadrant, you'll need to adjust the formula to

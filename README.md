@@ -41,26 +41,26 @@ of the rectangle for the virtual controller.
         rad = get_angle(pos, v_control.center)
 
 
-You'll need to use arc tangent `math.atan` to calculate the angle
-in radians.  This is in the python math standard library.  You'll
-need to import it.  arc tangent needs to know the lengths of the
+## Review Your Trigonometry
+You'll need to use arc tangent to calculate the angle
+in radians.  You'll also need to use sine and cosine.  If your
+trigonometry is a rusty, review it now.
+
+`math.atan`, `math.sin`, and `math.cos` are in the python math 
+standard library.  You'll
+need to add `import math` at the top of your program.  
+To use arc tangent you'll need to calculate the lengths of the
 opposite and adjacent sides of a right triangle. Since the 
 formulas to calculate the lengths of the sides of a triangle 
- are slightly different, I've divided the controller into
+ are slightly different depending on where the thumb is on the controller, 
+ I've divided the controller into
  four quadrants, starting with quadrant one in the upper right and 
  rotating counter-clockwise.
-
-
-## Organize Controller Into Quadrants
-
-Divide the virtual controller into four quadrants.
 
 For each quadrant, you'll need to adjust the formula to
 calculate the opposite and adjacent sides of the triangle.  For example, if the mouse
 is above the center of the controller, you'll need to subtract the mouse y position
-from the centery of the controller. The formulas for each quadrant are slightly 
-different, depending on whether you add or subtract values to get the length of
-the side of the triangle. 
+from the centery of the controller. 
 
 ## Define Each Quadrant
 
